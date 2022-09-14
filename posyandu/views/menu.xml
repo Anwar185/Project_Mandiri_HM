@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+   <menuitem
+    id="posyandu_menu_root"
+    name="Posyandu Melati"
+    sequence="10"/>
+
+    <menuitem
+        id="posyandu_formbalita_menu_categ"
+        name="BALITA"
+        parent="posyandu_menu_root"
+        sequence="10"/>
+
+    <menuitem
+        id="posyandu_formibuhamil_menu_categ"
+        name="IBU HAMIL"
+        parent="posyandu_menu_root"
+        sequence="20"/>
+
+    <menuitem
+        id="posyandu_remaja_menu_categ"
+        name="REMAJA"
+        parent="posyandu_menu_root"
+        sequence="30"/>
+
+    <menuitem
+        id="posyandu_remaja_menu_categ"
+        name="Lansia"
+        parent="posyandu_menu_root"
+        sequence="40"/>
+
+     <menuitem
+        id="posyandu_dokter_menu_categ"
+        name="DOKTER"
+        parent="posyandu_menu_root"
+        sequence="50"/>
+
+     <menuitem 
+        id="posyandu_inputjenisimunisasi_menu_categ" 
+        name="INPUT JENIS IMUNISASI" 
+        parent="posyandu_menu_root" 
+        sequence="60"/>
+</odoo>

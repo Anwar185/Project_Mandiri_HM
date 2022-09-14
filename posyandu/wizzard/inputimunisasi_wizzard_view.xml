@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- model.name form view --> -->
+    <record id="input_imunisasi_view_form_wizzard" model="ir.ui.view">
+        <field name="name">Input Imunisasi</field>
+        <field name="model">posyandu.inputimunisasi</field>
+        <field name="arch" type="xml">
+            <form string='Input Jumlah Imunisasi'>
+                <group>
+                    <field name="imunisasi_ids"/> 
+                    <field name="jumlah"/>   
+                </group>
+                <footer>
+                    <button name='button_input_imunisasi' type='object' string='Input Imunisasi' class='btn btn-warning'/>
+                    <button string='Cancel' special='cancel' class='btn btn-danger'/>
+                </footer>        
+            </form>
+        </field>
+    </record>
+    <record id="input_imunisasi_action_wizzard" model="ir.actions.act_window">
+        <field name="name">Input Imunisasi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">posyandu.inputimunisasi</field>
+        <field name="view_mode">form</field>   
+        <field name="view_id" ref="input_imunisasi_view_form_wizzard"/>
+        <field name="target">new</field>  
+    </record>
+    
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="posyandu_input_menu_act" 
+              name="Tambah Stok Imunisasi" 
+              parent="posyandu_inputjenisimunisasi_menu_categ" 
+              action="input_imunisasi_action_wizzard" 
+              sequence="20"/>
+</odoo>
+

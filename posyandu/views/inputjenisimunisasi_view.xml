@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- posayandu.inputjenisimunisasi tree view -->
+    <record id="posyandu_inputjenisimunisasi_view_tree" model="ir.ui.view">
+        <field name="name">posyandu.inputjenisimunisasi.view.tree</field>
+        <field name="model">posyandu.inputjenisimunisasi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="kode_imunisasi"/>
+                <field name="stok"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- posyandu.inputjensimunisasi form view -->
+    <record id="posyandu_inputjenisimunisasi_view_form" model="ir.ui.view">
+        <field name="name">Input Jenis Imunisasi</field>
+        <field name="model">posyandu.inputjenisimunisasi</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="imunisasi" string="Input Jenis Imunisasi Balita">
+                        <field name="name" 
+                        required="1"
+                        />
+                        <field name="kode_imunisasi" />
+                        <field name="stok" />
+                    </group>
+                    <group name="imun remaja" string="Input Jenis Imunisasi Remaja">
+                        <field name="imun_remaja" 
+                        required="1"
+                        />
+                        <field name="kode_imunisasi2" />
+                        <field name="stok2" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+     <!-- posyandu.inputjenisimunisasi action window -->
+    <record id="posyandu_inputjenisimunisasi_action" model="ir.actions.act_window">
+        <field name="name">Daftar Imunisasi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">posyandu.inputjenisimunisasi</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="posyandu_inputjenisimunisasi_menu_act" 
+              name="Input Jenis Imunisasi" 
+              parent="posyandu_inputjenisimunisasi_menu_categ" 
+              action="posyandu_inputjenisimunisasi_action" 
+              sequence="10"/>
+</odoo>

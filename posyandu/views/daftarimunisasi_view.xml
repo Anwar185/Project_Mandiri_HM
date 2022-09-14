@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- posayandu.daftarimunisasi tree view -->
+    <record id="posyandu_daftarimunisasi_view_tree" model="ir.ui.view">
+        <field name="name">posyandu.daftarimunisasi.view.tree</field>
+        <field name="model">posyandu.daftarimunisasi</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="balita_id"/>
+                <field name="imunisasi_id" />
+                <field name="tgl_imunisasi" />
+                <field name="kebutuhan" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- posyandu.daftarimunisasi form view -->
+    <record id="posyandu_daftarimunisasi_view_form" model="ir.ui.view">
+        <field name="name">Daftar Imunisasi</field>
+        <field name="model">posyandu.daftarimunisasi</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group name="imunisasi" string="Daftar Imunisasi Balita">
+                        <field name="balita_id"/>
+                        <field name="imunisasi_id" />
+                        <field name="tgl_imunisasi" />
+                        <field name="kebutuhan" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- posyandu.daftarimunisasi kanban view -->
+    <record id="posyandu_daftarimunisasi_view_kanban" model="ir.ui.view">
+        <field name="name">posyandu.daftarimunisasi.view.kanban</field>
+        <field name="model">posyandu.daftarimunisasi</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="balita_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_posyandu_remaja_kanban">
+                            <div class="oe_kanban_details d-flex flex-column">
+                                <strong>
+                                    <field name="balita_id"/>
+                                </strong>
+                                <ul>
+                                    <li>Nama Imunisasi : <field name="imunisasi_id" /></li>
+                                    <li>Tanggal Imunisasi:<field name="tgl_imunisasi" /></li>
+                                </ul>
+                            </div>
+                        </div>    
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- posyandu.daftarimunisasi action window -->
+    <record id="posyandu_daftarimunisasi_action" model="ir.actions.act_window">
+        <field name="name">Daftar Imunisasi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">posyandu.daftarimunisasi</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="posyandu_daftarimunisasi_menu_act" 
+              name="DAFTAR IMUNISASI" 
+              parent="posyandu_menu_root" 
+              action="posyandu_daftarimunisasi_action" 
+              sequence="55"/>
+</odoo>

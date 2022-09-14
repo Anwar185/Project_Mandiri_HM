@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="report_balita_xlsx" model="ir.actions.report">
+        <field name="name">Print Balita Excel</field>
+        <field name="model">posyandu.balita</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">posyandu_report_balita_xlsx</field>
+        <field name="report_file">posyandu.report_balita_xlsx</field>
+        <field name="binding_model_id" ref="model_posyandu_balita"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_balita_pdf" model="ir.actions.report">
+        <field name="name">Print Balita Pdf</field>
+        <field name="model">posyandu.balita</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">posyandu.report_balita_pdf</field>
+        <field name="report_file">posyandu.report_balita_pdf</field>
+        <field name="binding_model_id" ref="model_posyandu_balita"/>
+        <field name="binding_type">report</field>
+    </record>  
+    <!-- <record id="report_daftarimunisasi_xlsx" model="ir.actions.report">
+        <field name="name">Daftar Imunisasi Excel</field>
+        <field name="model">posyandu.daftarimunisas</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">posyandu_report_balita_xlsx</field>
+        <field name="report_file">posyandu.report_balita_xlsx</field>
+        <field name="binding_model_id" ref="model_posyandu_balita"/>
+        <field name="binding_type">report</field>
+    </record> -->
+</odoo>

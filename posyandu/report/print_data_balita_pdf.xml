@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_balita_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <h2><b>DATA BALITA</b></h2>
+                        <style>
+                            table, tr, td {
+                                border: 1px solid black;
+                                border-collapse: collapse:
+                            }
+                        </style>
+                        <table width='100%'>
+                            <tr>
+                                <td width='40%'><span>NIK</span></td>
+                                <td width='40'><span>Nama Balita</span></td>
+                                <td width='20'><span>Tanggal Lahir</span></td>
+                            </tr>
+                        <t t-foreach="record" t-as="o">
+                            <tr>
+                                <td width='40%'><span t.field="o.nik_balita"/></td>
+                                <td width='40'><sspan t.field="o.name"/></td>
+                                <td width='20'><span t.field="o.tgl"/></td>
+                            </tr>
+                        </t>
+                        </table>
+                </div>
+            </t>
+        </t>
+    </template>    
+</odoo>

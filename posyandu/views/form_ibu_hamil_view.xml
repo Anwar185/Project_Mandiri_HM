@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- posyandu.ibuhamil tree view -->
+    <record id="posyandu_ibuhamil_view_tree" model="ir.ui.view">
+        <field name="name">posyandu.ibuhamil.view.tree</field>
+        <field name="model">posyandu.ibuhamil</field>
+        <field name="arch" type="xml">
+            <tree string="Data Ibu Hamil">
+                <field name="nik_ibuhamil" />
+                <field name="name" />
+                <field name="usia_kandungan" />
+                <field name="tgl" />
+                <field name="alamat" />
+                <field name="dokter_ids" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- posyandu.ibuhamil form view -->
+    <record id="model_ibuhamil_view_form" model="ir.ui.view">
+        <field name="name">posyandu.ibuhamil.view.form</field>
+        <field name="model">posyandu.ibuhamil</field>
+        <field name="arch" type="xml">
+            <form string="Input Data Ibu Hamil">
+                <sheet>
+                    <group>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="name" placeholder="Nama Lengkap" />
+                            </h2>
+                        </div>
+                    </group>
+                    <group string="Identitas Ibu Hamil">
+                        <field name="nik_ibuhamil" />
+                        <field name="usia_kandungan" 
+                        required="1"
+                        />
+                        <field name="tgl" />
+                        <field name="alamat" />
+                    </group>
+                     <group name="Data Dokter" string="Data Dokter">
+                        <field name="dokter_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- posyandu.ibuhamil action window -->
+    <record id="posyandu_ibuhamil_action" model="ir.actions.act_window">
+        <field name="name">Data Ibu Hamil</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">posyandu.ibuhamil</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="posyandu_databuhamil_menu_categ"
+        name="Input Data Ibu Hamil"
+        parent="posyandu_formibuhamil_menu_categ"
+        action="posyandu_ibuhamil_action"
+        sequence="20"/>
+</odoo>

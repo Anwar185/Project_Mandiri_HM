@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_posyandu_balita,access.posyandu.balita,model_posyandu_balita,,1,1,1,1
+access_posyandu_daftarimunisasi,access.posyandu.daftarimunisasi,model_posyandu_daftarimunisasi,,1,1,1,1
+access_posyandu_ibuhamil,access.posyandu.ibuhamil,model_posyandu_ibuhamil,,1,1,1,1
+access_posyandu_remaja,access.posyandu.remaja,model_posyandu_remaja,,1,1,1,1
+access_posyandu_lansia,access.posyandu.lansia,model_posyandu_lansia,,1,1,1,1
+access_posyandu_dokter,access.posyandu.dokter,model_posyandu_dokter,,1,1,1,1
+access_posyandu_inputjenisimunisasi,access.posyandu.inputjenisimunisasi,model_posyandu_inputjenisimunisasi,,1,1,1,1
+access_posyandu_detailimunisasi,access.posyandu.detailimunisasi,model_posyandu_detailimunisasi,,1,1,1,1
+access_posyandu_inputimunisasi,access.posyandu.inputimunisasi,model_posyandu_inputimunisasi,,1,1,1,1

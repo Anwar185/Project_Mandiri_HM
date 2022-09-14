@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <!-- posyandu.dokter tree view -->
+    <record id="posyandu_dokter_view_tree" model="ir.ui.view">
+        <field name="name">posyandu.dokter.view.tree</field>
+        <field name="model">posyandu.dokter</field>
+        <field name="arch" type="xml">
+            <tree string="Data Dokter" sample="1" multi_edit="1">
+                <field name="id_dokter" /> 
+                <field name="name" />
+                <field name="alamat" />
+                <field name="dokter_spesialis" />
+                <field name="pasien_imunisasi" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- posyandu.dokter form view -->
+    <record id="posyandu_dokter_view_form" model="ir.ui.view">
+        <field name="name">posyandu.dokter.view.form</field>
+        <field name="model">posyandu.dokter</field>
+        <field name="arch" type="xml">
+            <form string="Input Data Dokter">
+                <sheet>
+                    <field name="image_dok" widget="image" class="oe_avatar"/>
+                    <group>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="name" placeholder="Nama Lengkap Dokter" />
+                            </h2>
+                            <h3>
+                                <field name="id_dokter" placeholder="Masukkan ID Dokter" />
+                            </h3>
+                        </div>
+                    </group>
+                    <group string="Identitas Dokter">
+                        <field name="alamat" />
+                        <field name="dokter_spesialis" 
+                        required="1"
+                        />
+                        <field name="pasien_imunisasi" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- posyandu.dokter kanban view -->
+    <record id="posyandu_dokter_view_kanban" model="ir.ui.view">
+        <field name="name">posyandu.dokter.view.kanban</field>
+        <field name="model">posyandu.dokter</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="name"/>
+                <field name="alamat" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_posyandu_remaja_kanban"> -->
+                            <!-- <t t-if="record.image.raw_value">
+                                <div class="o_kanban_image_fill_left d-none d-md-block"
+                                    t-attf-style="background-image:url('#{kanban_image('posyandu.remaja', 'image', record.id.raw_value)}')">
+                                </div>
+                            </t> -->
+                            <div class="oe_kanban_details d-flex flex-column">
+                                <strong>
+                                    <field name="name"/>
+                                </strong>
+                                <ul>
+                                    <li>Alamat: <field name="alamat" /></li>
+                                    <li>Dokter Spesialis:  <field name="dokter_spesialis" /></li>
+                                    <li>Nama Pasien:  <field name="pasien_imunisasi" /></li>
+                                </ul>
+                            </div>
+                        </div>    
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+   <!-- posyandu.dokter action window -->
+    <record id="posyandu_dokter_action" model="ir.actions.act_window">
+        <field name="name">Data Dokter</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">posyandu.dokter</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="posyandu_dokter_view_menu_act" 
+        name="Dokter" 
+        parent="posyandu_dokter_menu_categ" 
+        action="posyandu_dokter_action" 
+        sequence="10"/>
+</odoo>

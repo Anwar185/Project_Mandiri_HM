@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="posyandu.list">
+      <field name="name">posyandu list</field>
+      <field name="model">posyandu.posyandu</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="posyandu.action_window">
+      <field name="name">posyandu window</field>
+      <field name="res_model">posyandu.posyandu</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="posyandu.action_server">
+      <field name="name">posyandu server</field>
+      <field name="model_id" ref="model_posyandu_posyandu"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="posyandu" id="posyandu.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="posyandu.menu_1" parent="posyandu.menu_root"/>
+    <menuitem name="Menu 2" id="posyandu.menu_2" parent="posyandu.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="posyandu.menu_1_list" parent="posyandu.menu_1"
+              action="posyandu.action_window"/>
+    <menuitem name="Server to list" id="posyandu" parent="posyandu.menu_2"
+              action="posyandu.action_server"/>
+-->
+  </data>
+</odoo>

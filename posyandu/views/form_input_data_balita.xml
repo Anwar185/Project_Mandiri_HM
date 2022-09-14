@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- posyandu.balita tree view -->
+    <record id="posyandu_balita_view_tree" model="ir.ui.view">
+        <field name="name">Data Balita</field>
+        <field name="model">posyandu.balita</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nik_balita"/>
+                <field name="name"/>
+                <field name="tgl"/>
+                <field name="usia"/>
+                <field name="alamat" />
+                <field name="jenis_kelamin"/>
+                <field name="nama_ortu"/>
+                <field name="berat_badan"/>
+                <field name="tinggi_badan"/>
+                <field name="dokter_ids" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- posyandu.balita form view --> 
+    <record id="posyandu_balita_view_form" model="ir.ui.view">
+        <field name="name">Form Balita</field>
+        <field name="model">posyandu.balita</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <div class="oe_title">
+                            <h2>
+                                <field name="name" placeholder="Nama Lengkap Balita" />
+                            </h2>
+                        </div>
+                    </group>
+                    <group name="identitas" string="Identitas Balita">
+                        <field name="nik_balita"/>
+                        <field name="tgl"/>  
+                        <field name="nama_ortu"/>
+                        <field name="alamat" />
+                        <field name="usia"/> 
+                        <field name="jenis_kelamin" 
+                        required="1"
+                        />        
+                    </group>
+                    <group name="data" string="Data">
+                        <field name="berat_badan" />
+                        <field name="tinggi_badan" />
+                    </group>
+                    <group name="Data Dokter" string="Data Dokter">
+                        <field name="dokter_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- posyandu.forminputdata action window -->
+    <record id="posyandu_balita_action" model="ir.actions.act_window">
+        <field name="name">Data Balita</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">posyandu.balita</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">
+            {
+                'search_default_balita': 1,
+                'default_is_balita':True 
+            }
+        </field>
+        
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="posyandu_formbalita_menu_act"
+        name="Data Balita"
+        parent="posyandu_formbalita_menu_categ"
+        action="posyandu_balita_action"
+        sequence="10"/>
+
+</odoo>
