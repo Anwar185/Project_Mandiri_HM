@@ -58,19 +58,19 @@ class DaftarImunisasi(models.Model):
                 [('id', '=', line.imunisasi_id.id)]
              ).write({'stok': line.imunisasi_id.stok - line.kebutuhan})
              return line
-    # @api.unlink
-    # def unlink(self):
-    # if self.detailimunisasi_ids:
-    #     daftarimunisasi= []
-    #     for line in self:
-    #         daftarimunisasi = self.env['posyandu.detailimunisasi'].search(
-    #             [('imunisasi_id', '=', line.id)])
-    #         print(daftarimunisasi)
+    @api.unlink
+    def unlink(self):
+    if self.detailimunisasi_ids:
+        daftarimunisasi= []
+        for line in self:
+            daftarimunisasi = self.env['posyandu.detailimunisasi'].search(
+                [('imunisasi_id', '=', line.id)])
+            print(daftarimunisasi)
 
-    #     for ob in penjualan:
-    #         print(ob.imunisasi_id.name + ' ' + str(ob.kebutuhan))
-    #         ob.imunisasi_id.stok += ob.kebutuhan
-    # line = super(DaftarImunisasi, self).unlink()
+        for ob in penjualan:
+            print(ob.imunisasi_id.name + ' ' + str(ob.kebutuhan))
+            ob.imunisasi_id.stok += ob.kebutuhan
+    line = super(DaftarImunisasi, self).unlink()
 
 class DetailImumisasi(models.Model):
     _name = 'posyandu.detailimunisasi'
